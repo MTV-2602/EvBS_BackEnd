@@ -157,22 +157,22 @@ public class DatabaseInitializer implements CommandLineRunner {
         
         return List.of(
             // Admin users
-            createUser("System Admin", "admin@evbs.com", "0901000001", encodedPassword, User.Role.ADMIN, User.Status.ACTIVE),
-            createUser("Super Admin", "superadmin@evbs.com", "0901000002", encodedPassword, User.Role.ADMIN, User.Status.ACTIVE),
+            createUser("Vinh Admin", "vinhmtse180031@fpt.edu.vn", "0901000001", encodedPassword, User.Role.ADMIN, User.Status.ACTIVE),
+            createUser("Trí Admin", "lephuoctri2205@gmail.com", "0901000002", encodedPassword, User.Role.ADMIN, User.Status.ACTIVE),
             
             // Staff users
-            createUser("Nguyễn Văn Staff", "staff1@evbs.com", "0902000001", encodedPassword, User.Role.STAFF, User.Status.ACTIVE),
+            createUser("Nguyễn Văn Staff", "vinhvip4508@gmail.com", "0902000001", encodedPassword, User.Role.STAFF, User.Status.ACTIVE),
             createUser("Trần Thị Staff", "staff2@evbs.com", "0902000002", encodedPassword, User.Role.STAFF, User.Status.ACTIVE),
             createUser("Lê Văn Staff", "staff3@evbs.com", "0902000003", encodedPassword, User.Role.STAFF, User.Status.ACTIVE),
             
             // Driver users
-            createUser("Nguyễn Văn An", "driver1@gmail.com", "0903000001", encodedPassword, User.Role.DRIVER, User.Status.ACTIVE),
+            createUser("Nguyễn Văn An", "team89a6@gmail.com", "0903000001", encodedPassword, User.Role.DRIVER, User.Status.ACTIVE),
             createUser("Trần Thị Bình", "driver2@gmail.com", "0903000002", encodedPassword, User.Role.DRIVER, User.Status.ACTIVE),
             createUser("Lê Văn Cường", "driver3@gmail.com", "0903000003", encodedPassword, User.Role.DRIVER, User.Status.ACTIVE),
             createUser("Phạm Thị Dung", "driver4@gmail.com", "0903000004", encodedPassword, User.Role.DRIVER, User.Status.ACTIVE),
             createUser("Hoàng Văn Em", "driver5@gmail.com", "0903000005", encodedPassword, User.Role.DRIVER, User.Status.ACTIVE),
             createUser("Vũ Thị Phượng", "driver6@gmail.com", "0903000006", encodedPassword, User.Role.DRIVER, User.Status.INACTIVE),
-            createUser("Đào Văn Giang", "driver7@gmail.com", "0903000007", encodedPassword, User.Role.DRIVER, User.Status.ACTIVE)
+            createUser("Lê Phước Trí", "lptri22051@gmail.com", "0774560933", encodedPassword, User.Role.DRIVER, User.Status.ACTIVE)
         );
     }
 
@@ -711,11 +711,7 @@ public class DatabaseInitializer implements CommandLineRunner {
         LocalDateTime now = LocalDateTime.now();
         
         return List.of(
-            // CONFIRMED bookings - Driver đã đặt và staff đã confirm
-            createBooking(drivers.get(0), vehicles.get(0), stations.get(0), now.plusHours(2), Booking.Status.CONFIRMED, staff.get(0)),    
-            createBooking(drivers.get(2), vehicles.get(2), stations.get(2), now.plusHours(6), Booking.Status.CONFIRMED, staff.get(1)),   
-            createBooking(drivers.get(3), vehicles.get(3), stations.get(3), now.plusHours(20), Booking.Status.CONFIRMED, staff.get(1)),  
-            
+
             // PENDING bookings - Driver đã đặt, hệ thống đã reserve pin, chờ driver đến
             createBooking(drivers.get(1), vehicles.get(1), stations.get(1), now.plusHours(4), Booking.Status.PENDING, null),           
             createBooking(drivers.get(4), vehicles.get(4), stations.get(4), now.plusHours(8), Booking.Status.PENDING, null),
